@@ -2,7 +2,6 @@
 -- Question 1: What's the cancellation rate for each hotel type?
 -- =============================================
 
--- View first few rows of the data
 SELECT 
     hotel as hotel_type, 
     sum(is_canceled) as cancellations,
@@ -17,7 +16,6 @@ SELECT
 -- Question 2: Which months see the most bookings?
 -- =============================================
 
--- Count of bookings by hotel type
 SELECT 
     arrival_date_month as month,
     COUNT(*) AS total_bookings
@@ -29,38 +27,52 @@ SELECT
 -- Question 3: Which countries have the highest cancellation rates?
 -- =============================================
 
--- Monthly booking trends
 SELECT 
-    arrival_date_month,
-    COUNT(*) as monthly_bookings
-FROM hotel_bookings
-GROUP BY arrival_date_month
-ORDER BY 
-    CASE arrival_date_month
-        WHEN 'January' THEN 1
-        WHEN 'February' THEN 2
-        WHEN 'March' THEN 3
-        WHEN 'April' THEN 4
-        WHEN 'May' THEN 5
-        WHEN 'June' THEN 6
-        WHEN 'July' THEN 7
-        WHEN 'August' THEN 8
-        WHEN 'September' THEN 9
-        WHEN 'October' THEN 10
-        WHEN 'November' THEN 11
-        WHEN 'December' THEN 12
-    END;
+    country,
+    sum(is_canceled) as cancellations,
+    count(*) as total_bookings,
+    ROUND((SUM(is_canceled) * 100.0) / COUNT(*), 2) as cancellation_rate
+    FROM hotel_bookings
+    GROUP BY country
+    HAVING COUNT(*) > 50
+    ORDER BY cancellation_rate DESC
+    LIMIT 10;
 
 -- =============================================
--- SECTION 4: Revenue Analysis
+-- Question 4: Which distribution channels are most effective (least cancellations)?
 -- =============================================
 
--- Average daily rate by hotel
 SELECT 
-    hotel,
-    ROUND(AVG(adr), 2) as avg_daily_rate,
-    MIN(adr) as min_rate,
-    MAX(adr) as max_rate
-FROM hotel_bookings
-GROUP BY hotel
-ORDER BY avg_daily_rate DESC;
+    distribution_channel,
+    sum(is_canceled) as cancellations,
+    count(*) as total_bookings,
+    ROUND((SUM(is_canceled) * 100.0) / COUNT(*), 2) as cancellation_rate
+    FROM hotel_bookings
+    GROUP BY distribution_channel
+    ORDER BY cancellation_rate ASC;
+
+-- =============================================
+-- Question 5: Does a longer lead time increase the likelihood of cancellation? 
+-- =============================================
+
+SELECT 
+    width_bucket(lead_time, 0, 740, 10) AS lead_time_bin,
+    sum(is_canceled) as cancellations,
+    count(*) as total_bookings,
+    ROUND((SUM(is_canceled) * 100.0) / COUNT(*), 2) as cancellation_rate
+    FROM hotel_bookings
+    GROUP BY lead_time_bin
+    ORDER BY lead_time_bin DESC;
+
+-- =============================================
+-- Question 6: What’s the revenue lost due to cancellations by hotel type?
+-- =============================================
+
+SELECT 
+    width_bucket(lead_time, 0, 740, 10) AS lead_time_bin,
+    sum(is_canceled) as cancellations,
+    count(*) as total_bookings,
+    ROUND((SUM(is_canceled) * 100.0) / COUNT(*), 2) as cancellation_rate
+    FROM hotel_bookings
+    GROUP BY lead_time_bin
+    ORDER BY lead_time_bin DESC;

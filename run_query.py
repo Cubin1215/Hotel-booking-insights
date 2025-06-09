@@ -17,15 +17,16 @@ def get_query_number():
         sys.exit(1)
 
 def extract_queries(sql_content):
-    # Split the content by section markers
-    sections = re.split(r'-- =+.*?=+\s*', sql_content)
+    # Split the content by section markers (looking for Question X: pattern)
+    sections = re.split(r'-- =+.*?Question \d+:.*?=+\s*', sql_content)
     queries = []
     
     for section in sections:
         if section.strip():
             # Find all SQL statements in the section
             sql_statements = re.findall(r'SELECT.*?;', section, re.DOTALL | re.IGNORECASE)
-            queries.extend(sql_statements)
+            if sql_statements:  # Only add if we found a SELECT statement
+                queries.extend(sql_statements)
     
     return queries
 
@@ -53,8 +54,17 @@ if query_number < 1 or query_number > len(queries):
     print(f"Invalid query number. Please choose between 1 and {len(queries)}")
     print("\nAvailable queries:")
     for i, query in enumerate(queries, 1):
-        print(f"\nQuery {i}:")
-        print("-" * 40)
+        # Extract the query description from the SQL file
+        query_desc = ""
+        with open('exploration.sql', 'r') as f:
+            content = f.read()
+            # Find the section header for this query
+            matches = re.findall(r'-- =+.*?Question ' + str(i) + r':(.*?)=+\s*', content, re.DOTALL)
+            if matches:
+                query_desc = matches[0].strip()
+        
+        print(f"\nQuery {i}: {query_desc}")
+        print("-" * 80)
         print(query.strip())
     sys.exit(1)
 
