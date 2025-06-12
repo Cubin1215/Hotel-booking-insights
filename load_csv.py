@@ -1,6 +1,11 @@
 import pandas as pd
 import psycopg2
 from psycopg2 import sql
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Load the CSV
 df = pd.read_csv("hotel_bookings.csv")
@@ -10,11 +15,11 @@ df = df.fillna(value='')
 
 # Connect to PostgreSQL
 conn = psycopg2.connect(
-    database="hotel_booking",
-    user="postgres",
-    password="@Pazad1512",
-    host="localhost",
-    port="5432"
+    database=os.getenv('DB_NAME'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    host=os.getenv('DB_HOST'),
+    port=os.getenv('DB_PORT')
 )
 
 cur = conn.cursor()

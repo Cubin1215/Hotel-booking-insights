@@ -3,6 +3,11 @@ from tabulate import tabulate
 import pandas as pd
 import sys
 import re
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 def get_query_number():
     if len(sys.argv) > 1:
@@ -30,13 +35,13 @@ def extract_queries(sql_content):
     
     return queries
 
-# Use the same connection details from your db_connect.py
+# Use environment variables for database connection
 connection = psycopg2.connect(
-    database="hotel_booking",
-    user="postgres",
-    password="@Pazad1512",
-    host="localhost",
-    port="5432"
+    database=os.getenv('DB_NAME'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    host=os.getenv('DB_HOST'),
+    port=os.getenv('DB_PORT')
 )
 
 cursor = connection.cursor()
