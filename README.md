@@ -1,6 +1,6 @@
 # Hotel Booking Insights 🏨
 
-A comprehensive SQL-based business analytics project that explores hotel booking trends and provides valuable insights for hotel management and revenue optimization.
+A comprehensive SQL-based business analytics project that explores hotel booking trends and provides valuable insights for hotel management and revenue optimization. This project uses the [Hotel Booking Demand Dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand) from Kaggle.
 
 ## 📊 Project Overview
 
@@ -25,77 +25,68 @@ hotel-booking-insights/
 └── .env               # Database configuration (not tracked in git)
 ```
 
-### Setup Instructions
-
-1. Clone the repository
-2. Install required Python packages:
-   ```bash
-   pip install pandas psycopg2-binary python-dotenv tabulate
-   ```
-3. Create a `.env` file with your database credentials:
-   ```
-   DB_PASSWORD=your_password_here
-   DB_USER=postgres
-   DB_NAME=hotel_booking
-   DB_HOST=localhost
-   DB_PORT=5432
-   ```
-4. Load the data:
-   ```bash
-   python load_csv.py
-   ```
 
 ## 📈 Analysis Questions & Insights
 
 ### 1. Hotel Type Cancellation Analysis
 **Question:** What's the cancellation rate for each hotel type?
 ![Query 1 Results](Query_Images/query%201.jpg)
-*Insight: Understanding which hotel types experience higher cancellation rates helps in implementing targeted retention strategies.*
+*Results:* City hotels show a higher cancellation rate (approximately 41.73%) compared to Resort hotels (approximately 27.76%).
+*Insight: Understanding which hotel types experience higher cancellation rates helps in implementing targeted retention strategies. City hotels may need more aggressive retention policies.*
 
 ### 2. Monthly Booking Trends
 **Question:** Which months see the most bookings?
 ![Query 2 Results](Query_Images/query%202.jpg)
-*Insight: Identifying peak booking months helps in resource allocation and pricing strategy.*
+*Results:* August and July are the peak booking months, with significantly higher booking volumes compared to other months.
+*Insight: Identifying peak booking months helps in resource allocation and pricing strategy. Hotels should prepare for increased demand during summer months.*
 
 ### 3. Country-wise Cancellation Analysis
 **Question:** Which countries have the highest cancellation rates?
 ![Query 3 Results](Query_Images/query%203.jpg)
-*Insight: Helps in understanding market-specific booking behaviors and implementing region-specific policies.*
+*Results:* Portugal (PRT) shows one of the highest cancellation rates among countries with significant booking volume.
+*Insight: Helps in understanding market-specific booking behaviors and implementing region-specific policies. May need to review booking policies for high-cancellation markets.*
 
 ### 4. Distribution Channel Effectiveness
 **Question:** Which distribution channels are most effective (least cancellations)?
 ![Query 4 Results](Query_Images/query%204.jpg)
-*Insight: Guides marketing budget allocation and channel optimization.*
+*Results:* Corporate and Direct channels show lower cancellation rates compared to Online Travel Agents (OTA).
+*Insight: Guides marketing budget allocation and channel optimization. Consider increasing focus on corporate and direct booking channels.*
 
 ### 5. Lead Time Impact
 **Question:** Does a longer lead time increase the likelihood of cancellation?
 ![Query 5 Results](Query_Images/query%205.jpg)
-*Insight: Helps in understanding booking window patterns and optimizing cancellation policies.*
+*Results:* Bookings made more than 6 months in advance show significantly higher cancellation rates.
+*Insight: Helps in understanding booking window patterns and optimizing cancellation policies. Consider implementing stricter policies for very early bookings.*
 
 ### 6. Revenue Loss Analysis
 **Question:** What's the revenue lost due to cancellations by hotel type?
 ![Query 6 Results](Query_Images/query%206.jpg)
-*Insight: Quantifies the financial impact of cancellations and helps in revenue management.*
+*Results:* City hotels experience higher revenue loss from cancellations, with losses exceeding 5.8 million in the dataset period.
+*Insight: Quantifies the financial impact of cancellations and helps in revenue management. City hotels may need to implement stricter cancellation policies.*
 
 ### 7. Room Upgrade Analysis
 **Question:** Which reserved room types are most often upgraded?
 ![Query 7 Results](Query_Images/query%207.jpg)
-*Insight: Helps in understanding room type preferences and optimizing room allocation.*
+*Results:* Room type A is most frequently upgraded, with specific patterns in upgrade destinations.
+*Insight: Helps in understanding room type preferences and optimizing room allocation. Can guide pricing strategy for different room types.*
 
 ### 8. ADR Trend Analysis
 **Question:** What's the ADR (Average Daily Rate) trend over time?
 ![Query 8 Results](Query_Images/query%208.jpg)
-*Insight: Tracks pricing trends and helps in revenue optimization.*
+*Results:* ADR shows seasonal patterns with higher rates during summer months and lower rates during winter.
+*Insight: Tracks pricing trends and helps in revenue optimization. Can guide dynamic pricing strategies.*
 
 ### 9. Guest Type Cancellation Analysis
 **Question:** Do families or solo travelers cancel more often?
 ![Query 9 Results](Query_Images/query%209.jpg)
-*Insight: Helps in understanding customer segment behavior and tailoring policies accordingly.*
+*Results:* Solo travelers show higher cancellation rates compared to families and couples.
+*Insight: Helps in understanding customer segment behavior and tailoring policies accordingly. May need different cancellation policies for different guest types.*
 
 ### 10. Market Segment Revenue Analysis
 **Question:** What's the average ADR by market segment?
 ![Query 10 Results](Query_Images/query%2010.jpg)
-*Insight: Guides pricing strategy for different market segments.*
+*Results:* Corporate and Direct bookings show higher ADR compared to other segments.
+*Insight: Guides pricing strategy for different market segments. Can help in optimizing revenue by focusing on higher-value segments.*
 
 ## 🎯 Business Impact
 
@@ -115,14 +106,18 @@ python run_query.py <query_number>
 ```
 Example: `python run_query.py 1` runs the hotel type cancellation analysis.
 
-## 🤝 Contributing
+## 📝 Conclusion
 
-Feel free to contribute to this project by:
-1. Forking the repository
-2. Creating a feature branch
-3. Submitting a pull request
+This comprehensive analysis of hotel booking data reveals several critical insights for hotel management. The study shows that city hotels face higher cancellation rates and revenue loss compared to resort hotels, suggesting a need for different management strategies. Seasonal patterns are evident in both booking volumes and pricing, with summer months showing peak activity. The analysis of distribution channels indicates that corporate and direct bookings are more reliable, while online travel agents show higher cancellation rates. 
 
-## 📝 License
+Customer behavior analysis reveals that solo travelers and early bookings (more than 6 months in advance) have higher cancellation rates, suggesting the need for targeted policies. The revenue analysis highlights significant financial impact from cancellations, particularly for city hotels. Market segment analysis shows that corporate and direct bookings command higher average daily rates, providing opportunities for revenue optimization.
 
-This project is open source and available under the MIT License.
+These insights can guide hotels in:
+1. Implementing targeted cancellation policies
+2. Optimizing pricing strategies
+3. Focusing on more reliable booking channels
+4. Managing seasonal demand effectively
+5. Developing segment-specific marketing strategies
+
+The findings emphasize the importance of data-driven decision-making in hotel management and provide a foundation for improving operational efficiency and revenue optimization.
 
