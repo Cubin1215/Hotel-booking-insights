@@ -31,62 +31,102 @@ hotel-booking-insights/
 ### 1. Hotel Type Cancellation Analysis
 **Question:** What's the cancellation rate for each hotel type?
 ![Query 1 Results](Query_Images/query%201.jpg)
-*Results:* City hotels show a higher cancellation rate (approximately 41.73%) compared to Resort hotels (approximately 27.76%).
-*Insight: Understanding which hotel types experience higher cancellation rates helps in implementing targeted retention strategies. City hotels may need more aggressive retention policies.*
+
+**Results:**  
+City hotels show a higher cancellation rate (approximately 41.73%) compared to Resort hotels (approximately 27.76%).
+
+**Insights:**  
+Understanding which hotel types experience higher cancellation rates helps in implementing targeted retention strategies. City hotels may need more aggressive retention policies.
 
 ### 2. Monthly Booking Trends
 **Question:** Which months see the most bookings?
 ![Query 2 Results](Query_Images/query%202.jpg)
-*Results:* August and July are the peak booking months, with significantly higher booking volumes compared to other months.
-*Insight: Identifying peak booking months helps in resource allocation and pricing strategy. Hotels should prepare for increased demand during summer months.*
+
+**Results:**  
+August and July are the peak booking months, with significantly higher booking volumes compared to other months.
+
+**Insights:**  
+Identifying peak booking months helps in resource allocation and pricing strategy. Hotels should prepare for increased demand during summer months.
 
 ### 3. Country-wise Cancellation Analysis
 **Question:** Which countries have the highest cancellation rates?
 ![Query 3 Results](Query_Images/query%203.jpg)
-*Results:* Portugal (PRT) shows one of the highest cancellation rates among countries with significant booking volume.
-*Insight: Helps in understanding market-specific booking behaviors and implementing region-specific policies. May need to review booking policies for high-cancellation markets.*
+
+**Results:**  
+Portugal (PRT) shows one of the highest cancellation rates among countries with significant booking volume.
+
+**Insights:**  
+Helps in understanding market-specific booking behaviors and implementing region-specific policies. May need to review booking policies for high-cancellation markets.
 
 ### 4. Distribution Channel Effectiveness
 **Question:** Which distribution channels are most effective (least cancellations)?
 ![Query 4 Results](Query_Images/query%204.jpg)
-*Results:* Corporate and Direct channels show lower cancellation rates compared to Online Travel Agents (OTA).
-*Insight: Guides marketing budget allocation and channel optimization. Consider increasing focus on corporate and direct booking channels.*
+
+**Results:**  
+Corporate and Direct channels show lower cancellation rates compared to Online Travel Agents (OTA).
+
+**Insights:**  
+Guides marketing budget allocation and channel optimization. Consider increasing focus on corporate and direct booking channels.
 
 ### 5. Lead Time Impact
 **Question:** Does a longer lead time increase the likelihood of cancellation?
 ![Query 5 Results](Query_Images/query%205.jpg)
-*Results:* Bookings made more than 6 months in advance show significantly higher cancellation rates.
-*Insight: Helps in understanding booking window patterns and optimizing cancellation policies. Consider implementing stricter policies for very early bookings.*
+
+**Results:**  
+Bookings made more than 6 months in advance show significantly higher cancellation rates.
+
+**Insights:**  
+Helps in understanding booking window patterns and optimizing cancellation policies. Consider implementing stricter policies for very early bookings.
 
 ### 6. Revenue Loss Analysis
 **Question:** What's the revenue lost due to cancellations by hotel type?
 ![Query 6 Results](Query_Images/query%206.jpg)
-*Results:* City hotels experience higher revenue loss from cancellations, with losses exceeding 5.8 million in the dataset period.
-*Insight: Quantifies the financial impact of cancellations and helps in revenue management. City hotels may need to implement stricter cancellation policies.*
+
+**Results:**  
+City hotels experience higher revenue loss from cancellations, with losses exceeding 5.8 million in the dataset period.
+
+**Insights:**  
+Quantifies the financial impact of cancellations and helps in revenue management. City hotels may need to implement stricter cancellation policies.
 
 ### 7. Room Upgrade Analysis
 **Question:** Which reserved room types are most often upgraded?
 ![Query 7 Results](Query_Images/query%207.jpg)
-*Results:* Room type A is most frequently upgraded, with specific patterns in upgrade destinations.
-*Insight: Helps in understanding room type preferences and optimizing room allocation. Can guide pricing strategy for different room types.*
+
+**Results:**  
+Room type A is most frequently upgraded, with specific patterns in upgrade destinations.
+
+**Insights:**  
+Helps in understanding room type preferences and optimizing room allocation. Can guide pricing strategy for different room types.
 
 ### 8. ADR Trend Analysis
 **Question:** What's the ADR (Average Daily Rate) trend over time?
 ![Query 8 Results](Query_Images/query%208.jpg)
-*Results:* ADR shows seasonal patterns with higher rates during summer months and lower rates during winter.
-*Insight: Tracks pricing trends and helps in revenue optimization. Can guide dynamic pricing strategies.*
+
+**Results:**  
+ADR shows seasonal patterns with higher rates during summer months and lower rates during winter.
+
+**Insights:**  
+Tracks pricing trends and helps in revenue optimization. Can guide dynamic pricing strategies.
 
 ### 9. Guest Type Cancellation Analysis
 **Question:** Do families or solo travelers cancel more often?
 ![Query 9 Results](Query_Images/query%209.jpg)
-*Results:* Solo travelers show higher cancellation rates compared to families and couples.
-*Insight: Helps in understanding customer segment behavior and tailoring policies accordingly. May need different cancellation policies for different guest types.*
+
+**Results:**  
+Solo travelers show higher cancellation rates compared to families and couples.
+
+**Insights:**  
+Helps in understanding customer segment behavior and tailoring policies accordingly. May need different cancellation policies for different guest types.
 
 ### 10. Market Segment Revenue Analysis
 **Question:** What's the average ADR by market segment?
 ![Query 10 Results](Query_Images/query%2010.jpg)
-*Results:* Corporate and Direct bookings show higher ADR compared to other segments.
-*Insight: Guides pricing strategy for different market segments. Can help in optimizing revenue by focusing on higher-value segments.*
+
+**Results:**  
+Corporate and Direct bookings show higher ADR compared to other segments.
+
+**Insights:**  
+Guides pricing strategy for different market segments. Can help in optimizing revenue by focusing on higher-value segments.
 
 ## 🎯 Business Impact
 
