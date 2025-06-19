@@ -1,5 +1,7 @@
 # Hotel Booking Insights 🏨
 
+![Hotel Bookings](Query_Images/hotel-bookings.webp)
+
 A comprehensive SQL-based business analytics project that explores hotel booking trends and provides valuable insights for hotel management and revenue optimization. This project uses the [Hotel Booking Demand Dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand) from Kaggle.
 
 ## 📊 Project Overview
@@ -53,7 +55,7 @@ Identifying peak booking months helps in resource allocation and pricing strateg
 ![Query 3 Results](Query_Images/query%203.jpg)
 
 **Results:**  
-Portugal (PRT) shows one of the highest cancellation rates among countries with significant booking volume.
+Portugal (PRT) shows one of the highest cancellation rates among countries with significant booking volume. Here, ARE is excluded as the instances provided for it are less and does not give a perfect analysis.
 
 **Insights:**  
 Helps in understanding market-specific booking behaviors and implementing region-specific policies. May need to review booking policies for high-cancellation markets.
@@ -63,7 +65,7 @@ Helps in understanding market-specific booking behaviors and implementing region
 ![Query 4 Results](Query_Images/query%204.jpg)
 
 **Results:**  
-Corporate and Direct channels show lower cancellation rates compared to Online Travel Agents (OTA).
+Corporate and Direct channels show lower cancellation rates compared to Online Travel Agents (OTA). GDS is excluded as its entries are less and doesn't give a perfect insight in relate to question.
 
 **Insights:**  
 Guides marketing budget allocation and channel optimization. Consider increasing focus on corporate and direct booking channels.
@@ -113,7 +115,7 @@ Tracks pricing trends and helps in revenue optimization. Can guide dynamic prici
 ![Query 9 Results](Query_Images/query%209.jpg)
 
 **Results:**  
-Solo travelers show higher cancellation rates compared to families and couples.
+Large families/groups show higher cancellation rates compared to families and couples.
 
 **Insights:**  
 Helps in understanding customer segment behavior and tailoring policies accordingly. May need different cancellation policies for different guest types.
@@ -123,7 +125,7 @@ Helps in understanding customer segment behavior and tailoring policies accordin
 ![Query 10 Results](Query_Images/query%2010.jpg)
 
 **Results:**  
-Corporate and Direct bookings show higher ADR compared to other segments.
+Online TA and Offline TA/TO bookings show higher ADR compared to other segments.
 
 **Insights:**  
 Guides pricing strategy for different market segments. Can help in optimizing revenue by focusing on higher-value segments.
