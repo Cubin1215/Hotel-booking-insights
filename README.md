@@ -1,6 +1,6 @@
 # Hotel Booking Insights 🏨
 
-![Hotel Bookings](Query_Images/hotel-bookings.webp)
+![Hotel Bookings](Query_Images/hotel_image.jpg)
 
 A comprehensive SQL-based business analytics project that explores hotel booking trends and provides valuable insights for hotel management and revenue optimization. This project uses the [Hotel Booking Demand Dataset](https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand) from Kaggle.
 
